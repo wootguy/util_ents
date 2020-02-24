@@ -1,0 +1,74 @@
+@PointClass size(-8 -8 -8, 8 8 8 ) color(128 255 255) = throwable : "Throwable Object"
+[	
+	targetname(target_source) : "Name"
+	target(target_source) : "Target on Break"
+	model(string) : "Model"
+	
+	material(choices) : "Material type" : 0 =
+	[
+		0: "Glass"
+		1: "Wood"
+		2: "Metal"
+		3: "Flesh"
+		4: "Cinder Block"
+		5: "Ceiling Tile"
+		6: "Computer"
+		7: "Unbreakable Glass"
+		8: "Rocks"
+	]
+	
+	health(string) : "Health" : "100"
+	hold_distance(string) : "Hold Distance" : "96"
+	throw_speed(string) : "Throw Speed" : "512"
+	explode_damage(integer) : "Explosion Damage (0 = no explosion)" : 0
+	life_time(string) : "Life Time (on trigger)" : "5"
+	timer_offset(integer) : "Timer Offset (frame/skin)" : 0
+	invert_timer(choices) : "Invert Timer (frame/skin)" : 0 =
+	[
+		0: "No"
+		1: "Yes"
+	]
+	break_on_monsters(choices) : "Break On Contact" : 0 =
+	[
+		0: "No"
+		1: "Monsters"
+	]
+	min_hull(string) : "Min hull size" : "-16 -16 0"
+	max_hull(string) : "Max hull size" : "16 16 32"
+]
+
+@SolidClass = func_throwable : "Throwable Object"
+[	
+	targetname(target_source) : "Name"
+	target(target_source) : "Target on Break"
+	
+	material(choices) : "Material type" : 0 =
+	[
+		0: "Glass"
+		1: "Wood"
+		2: "Metal"
+		3: "Flesh"
+		4: "Cinder Block"
+		5: "Ceiling Tile"
+		6: "Computer"
+		7: "Unbreakable Glass"
+		8: "Rocks"
+	]
+	
+	health(string) : "Health" : "100"
+	hold_distance(string) : "Hold Distance" : "96"
+	throw_speed(string) : "Throw Speed" : "512"
+	explode_damage(integer) : "Explosion Damage (0 = no explosion)" : 0
+	life_time(string) : "Life Time (on trigger)" : "5"
+	timer_offset(integer) : "Timer Offset (frame/skin)" : 0
+	invert_timer(choices) : "Invert Timer (frame/skin)" : 0 =
+	[
+		0: "No"
+		1: "Yes"
+	]
+	break_on_monsters(choices) : "Break On Contact" : 0 =
+	[
+		0: "No"
+		1: "Monsters"
+	]
+]
