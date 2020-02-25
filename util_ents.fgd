@@ -72,3 +72,127 @@
 		1: "Monsters"
 	]
 ]
+
+
+
+@PointClass size(-8 -8 -8, 8 8 8 ) color(128 255 255) = throwable : "Throwable Object"
+[	
+	targetname(target_source) : "Name"
+	target(target_source) : "Target on Break"
+	model(string) : "Model"
+	
+	material(choices) : "Material type" : 0 =
+	[
+		0: "Glass"
+		1: "Wood"
+		2: "Metal"
+		3: "Flesh"
+		4: "Cinder Block"
+		5: "Ceiling Tile"
+		6: "Computer"
+		7: "Unbreakable Glass"
+		8: "Rocks"
+	]
+	
+	health(string) : "Health" : "100"
+	hold_distance(string) : "Hold Distance" : "96"
+	throw_speed(string) : "Throw Speed" : "512"
+	explode_damage(integer) : "Explosion Damage (0 = no explosion)" : 0
+	life_time(string) : "Life Time (on trigger)" : "5"
+	timer_offset(integer) : "Timer Offset (frame/skin)" : 0
+	invert_timer(choices) : "Invert Timer (frame/skin)" : 0 =
+	[
+		0: "No"
+		1: "Yes"
+	]
+	break_on_monsters(choices) : "Break On Contact" : 0 =
+	[
+		0: "No"
+		1: "Monsters"
+	]
+	min_hull(string) : "Min hull size" : "-16 -16 0"
+	max_hull(string) : "Max hull size" : "16 16 32"
+]
+
+@PointClass color(255 255 0) = game_player_hud_sprite : "Player HUD sprites"
+[
+	spawnflags(flags) =
+	[
+		1: "All players" : 0
+		16: "Ignore HUD border" : 0
+		32: "Hidden" : 0
+		64: "Effect once" : 0
+		128: "Default alpha (static)" : 0
+		256: "Default alpha (dynamic)" : 0
+
+		65536: "Opaque" : 0
+		131072: "Masked" : 0
+		262144: "Play once" : 0
+		524288: "Hide after animation" : 0
+	]
+	
+	targetname(target_source) : "Name"
+	target(target_source) : "Target"
+	spritePath(string) : "Sprite Path (relative to sprites/)" : ""
+	region(string) : "Sprite Region (x y width height)" : "0 0 0 0"
+	frame(integer) : "Frame (0-255)" : 0
+	numframes(integer) : "Animation Frames (0-255)" : 0
+	framerate(string) : "Frames Per Second" : 10
+	x(string) : "X Offset (horizontal)" : "0.5"
+	y(string) : "Y Offset (vertical)" : "0.67"
+	xtype(choices) : "X Offset Type" : 0 =
+	[
+		0 : "Relative Left"
+		1 : "Relative Right"
+		2 : "Relative Center"
+		3 : "Absolute Left"
+		4 : "Absolute Right"
+		5 : "Absolute Center"
+	]
+	ytype(choices) : "Y Offset Type" : 0 =
+	[
+		0 : "Relative Top"
+		1 : "Relative Bottom"
+		2 : "Relative Center"
+		3 : "Absolute Top"
+		4 : "Absolute Bottom"
+		5 : "Absolute Center"
+	]
+	effect(choices) : "Effect" : 0 =
+	[
+		0 : "No effect"
+		1 : "Linear Fade: C1 -> C2"
+		2 : "Linear Fade: C2 -> C1"
+		3 : "Linear Fade: C1 -> C2 -> C1"
+		4 : "Cosine Fade: C1 -> C2"
+		5 : "Cosine Fade: C2 -> C1"
+		6 : "Cosine Fade: C1 -> C2 -> C1"
+		7 : "Toggle Between C1 And C2"
+		8 : "Sine Pulse: C1 -> 0 -> C2"
+	]
+	effecttime(string) : "Effect Time" : "0.5"
+	color1(string) : "Color 1 (RGBA)" : "255 255 255 255"
+	color2(string) : "Color 2 (RGBA)" : "255 255 255 255"
+	fadein(string) : "Fade In Time" : "0.5"
+	fadeout(string) : "Fade Out Time" : "1.5"
+	holdtime(string) : "Hold Time" : "1"
+	channel(choices) : "HUD Channel" : 1 =
+	[
+		0 : "Channel 1"
+		1 : "Channel 2"
+		2 : "Channel 3"
+		3 : "Channel 4"
+		4 : "Channel 5"
+		5 : "Channel 6"
+		6 : "Channel 7"
+		7 : "Channel 8"
+		8 : "Channel 9"
+		9 : "Channel 10"
+		10 : "Channel 11"
+		11 : "Channel 12"
+		12 : "Channel 13"
+		13 : "Channel 14"
+		14 : "Channel 15"
+		15 : "Channel 16"
+	]
+]
