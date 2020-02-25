@@ -11,6 +11,15 @@ namespace UtilEnts {
 		return c;
 	}
 	
+	Vector parseVector(string s) {
+		array<string> values = s.Split(" ");
+		Vector v(0,0,0);
+		if (values.length() > 0) v.x = atof( values[0] );
+		if (values.length() > 1) v.y = atof( values[1] );
+		if (values.length() > 2) v.z = atof( values[2] );
+		return v;
+	}
+	
 	array<CBaseEntity@> getTargetsByName(CBaseEntity@ pActivator, CBaseEntity@ pCaller, string target) {
 		array<CBaseEntity@> targets;
 	

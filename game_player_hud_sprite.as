@@ -178,10 +178,8 @@ namespace GamePlayerHudSprite {
 
 	};
 
-
 	void Register()
 	{
 		g_CustomEntityFuncs.RegisterCustomEntity( "GamePlayerHudSprite::game_player_hud_sprite", "game_player_hud_sprite" );
 	}
-
 }
