@@ -39,7 +39,6 @@ namespace GamePlayerHudSprite {
 		float y;
 		RGBA color1;
 		RGBA color2;
-		uint8 frame;
 		uint8 numframes;
 		float framerate;
 		float fadeInTime;
@@ -64,7 +63,6 @@ namespace GamePlayerHudSprite {
 				if (values.length() > 2) width = atoi( values[2] );
 				if (values.length() > 3) height = atoi( values[3] );
 			}
-			else if (szKey == "frame") frame = atoi(szValue);
 			else if (szKey == "numframes") numframes = atoi(szValue);
 			else if (szKey == "fadein") fadeInTime = atof(szValue);
 			else if (szKey == "fadeout") fadeOutTime = atof(szValue);
@@ -163,7 +161,7 @@ namespace GamePlayerHudSprite {
 				params.y = invertY ? -y : y;
 				params.color1 = color1;
 				params.color2 = color2;
-				params.frame = frame;
+				params.frame = int(self.pev.frame);
 				params.numframes = numframes;
 				params.framerate = self.pev.framerate;
 				params.fadeinTime = fadeInTime;
