@@ -21,7 +21,7 @@ namespace GamePlayerHudSprite {
 	}
 	
 	enum SPAWN_FLAGS {
-		FL_ALL_PLAYERS
+		FL_ALL_PLAYERS = 1
 	}
 
 	// Flags that are controlled by a keyvalue other than spawnflags
@@ -101,8 +101,6 @@ namespace GamePlayerHudSprite {
 			
 			return true;
 		}
-		
-		int ObjectCaps() { return (BaseClass.ObjectCaps() & ~FCAP_ACROSS_TRANSITION) | FCAP_DIRECTIONAL_USE; }
 		
 		void Spawn()
 		{

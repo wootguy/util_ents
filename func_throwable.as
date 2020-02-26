@@ -494,7 +494,7 @@ namespace FuncThrowable
 				if (explodeDamage > 0)
 					g_EntityFuncs.CreateExplosion(center, Vector(0,0,0), self.edict(), explodeDamage, true);
 				
-				g_EntityFuncs.FireTargets(pev.target, self, self, USE_TOGGLE);
+				g_EntityFuncs.FireTargets(pev.target, g_EntityFuncs.Instance(pevAttacker), self, USE_TOGGLE);
 				g_EntityFuncs.Remove(self);
 			}
 			else
