@@ -2,6 +2,8 @@
 
 namespace FuncThrowable
 {
+	bool g_hook_registered = false;
+	
 	class func_throwable : ScriptBaseEntity
 	{
 		EHandle owner;
@@ -84,6 +86,13 @@ namespace FuncThrowable
 			
 			SetThink( ThinkFunction( ThrowableThink ) );
 			self.pev.nextthink = g_Engine.time;
+			
+			// only register hook if the map uses this entity. Polling USE keys might hurt performance so best not to
+			// do that unless it's needed
+			if (!g_hook_registered) {
+				g_hook_registered = true;
+				g_Hooks.RegisterHook( Hooks::Player::PlayerUse, @ThrowablePlayerUse );
+			}
 		}
 		
 		void Precache()
@@ -534,8 +543,6 @@ namespace FuncThrowable
 	{
 		g_CustomEntityFuncs.RegisterCustomEntity( "FuncThrowable::func_throwable", "throwable" );
 		g_CustomEntityFuncs.RegisterCustomEntity( "FuncThrowable::func_throwable", "func_throwable" );
-		
-		g_Hooks.RegisterHook( Hooks::Player::PlayerUse, @ThrowablePlayerUse );
 	}
 
 	HookReturnCode ThrowablePlayerUse( CBasePlayer@ pPlayer, uint& out uiFlags )
