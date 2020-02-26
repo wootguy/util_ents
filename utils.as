@@ -23,7 +23,7 @@ namespace UtilEnts {
 	array<CBaseEntity@> getTargetsByName(CBaseEntity@ pActivator, CBaseEntity@ pCaller, string target) {
 		array<CBaseEntity@> targets;
 	
-		if (target== "!activator") {
+		if (target == "!activator") {
 			targets.insertLast(pActivator);
 		} else if (target == "!caller") {
 			targets.insertLast(pCaller);

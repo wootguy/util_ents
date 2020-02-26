@@ -118,13 +118,17 @@
 [
 	spawnflags(flags) =
 	[
+		// my flags
 		1: "All players" : 0
+		
+		// HUD_ELEM flags
 		16: "Ignore HUD border" : 0
 		32: "Hidden" : 0
 		64: "Effect once" : 0
 		128: "Default alpha (static)" : 0
 		256: "Default alpha (dynamic)" : 0
 
+		// HUD_SPR flags
 		65536: "Opaque" : 0
 		131072: "Masked" : 0
 		262144: "Play once" : 0
@@ -194,5 +198,25 @@
 		13 : "Channel 14"
 		14 : "Channel 15"
 		15 : "Channel 16"
+	]
+]
+
+@PointClass color(180 220 255) = game_player_print : "a less customizable game_text"
+[
+	spawnflags(flags) =
+	[
+		1: "All players" : 0
+	]
+	
+	targetname(target_source) : "Name"
+	target(target_source) : "Target"
+	message(string) : "Message Text" : ""
+	messagetype(choices) : "Message Type" : 4 =
+	[
+		1 : "Notification"
+		2 : "Console"
+		3 : "Chat"
+		4 : "Centered"
+		-1 : "Key Binding"
 	]
 ]
