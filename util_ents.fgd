@@ -220,3 +220,19 @@
 		-1 : "Key Binding"
 	]
 ]
+
+@PointClass color(255 30 165) = trigger_radius : "trigger ents within the radius of something"
+[	
+	targetname(target_source) : "Name"
+	origintarget(target_source) : "Origin Entity (blank = use this entity)"
+	radius(string) : "Radius" : "100"
+	target(target_source) : "Target"
+	
+	triggerstate(choices) : "Trigger State" : 0 =
+	[
+		0: "Off"
+		1: "On"
+		3: "Toggle"
+		4: "Kill"
+	]
+]
